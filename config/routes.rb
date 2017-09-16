@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   get 'home#index' => 'home#index'
+
+  get 'lists/' => 'lists#index'
+
+  get '/lists/:id', to: 'lists#show', as: 'event'
 end
