@@ -1,2 +1,10 @@
 <h1>Lists#create</h1>
 <p>Find me in app/views/lists/create.html.erb</p>
+<%= form_for @event do |f| %>
+    <div><%= f.text_field :title %></div>
+    <div><%= f.datetime_select :date %></div>
+    <div><%= f.text_field :where %></div>
+    <div><%= f.text_field :what %></div>
+    <%= f.submit %>
+<% end %>
+  

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   get 'lists/show'
 
-  get 'lists/create'
+  get 'lists/new'
+
+  get 'lists/create' 
 
   devise_for :users
   get 'home/index' 
