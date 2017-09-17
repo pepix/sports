@@ -3,20 +3,20 @@
 <hr>
 <h1>New event</h1>
 <%= form_for @event, :url => {:action => 'create'} do |f| %>
-    <div>title: <%= f.text_field :title %></div>
+    <div>Title: <%= f.text_field :title %></div>
     <% if @event.errors.messages[:title].any? %>
         <span style="color:red">
         <%= @event.errors.messages[:title][0] %>
         </span>
     <% end %>
-    <div>when: <%= f.datetime_select :when %></div>
+    <div>When: <%= f.datetime_select :when %></div>
     <% if @event.errors.messages[:when].any? %>
         <span style="color:red">
         <%= @event.errors.messages[:when][0] %>
         </span>
     <% end %>
-    <div>where: <%= f.text_field :where %></div>
-    <div>what: <%= f.text_field :what %></div></br>
+    <div>Where: <%= f.text_field :where %></div>
+    <div>What: <%= f.text_field :what %></div></br>
     <% if @event.errors.messages[:what].any? %>
         <span style="color:red">
         <%= @event.errors.messages[:what][0] %>
