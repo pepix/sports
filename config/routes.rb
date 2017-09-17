@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   resources "lists"
 
+  get "lists/hello_world"
+  post "lists/hello_world"
+
   devise_for :users
 
   get 'home/index' 
@@ -17,5 +20,9 @@ Rails.application.routes.draw do
 
   get 'lists/' => 'lists#create'
 
-  get '/lists/:id', to: 'lists#show', as: 'event'
+  get 'lists/:id', to: 'lists#show', as: 'event'
+
+  get 'search/:what' => 'search#index' 
+  get 'search/:when' => 'search#index' 
+  get 'search/:where' => 'search#index' 
 end
