@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'detail/join'
+
   resources "lists"
 
   get "lists/hello_world"

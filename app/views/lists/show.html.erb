@@ -46,4 +46,4 @@
 </script>
 <div id="map" style="width: 80%; height: 530px;"></div>
 
-<%= link_to "Join", "show_detail_path(show_detail)" %>
+<%= link_to "Join", controller: "detail", action: "join", event_id: @event.id %>
