@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Event.create(:title => "jogging", :date => "2017-9-31T06:30", :where => "Los Angels", :what => "Hi")
-Event.create(:title => "walking", :date => "2017-9-20T20:30", :where => "San Francisco", :what => "Hi")
-Event.create(:title => "swimming", :date => "2017-9-19T21:30", :where => "New York", :what => "Hi")
+User.create(:name => "Takemasa", :age => "20", :sex => "Male", :like_sport => "Running")
+User.create(:name => "Mahiro", :age => "21", :sex => "Male", :like_sport => "Swimming")
+User.create(:name => "Tact", :age => "21", :sex => "Male", :like_sport => "Bouldering")
+User.create(:name => "Tom", :age => "20", :sex => "Male", :like_sport => "Soccer")
+
+Event.create(:title => "Jogging", :when => "2017-9-31T06:30", :where => "Los Angels", :what => "Jogging")
+Event.create(:title => "Walking", :when => "2017-9-20T20:30", :where => "San Francisco", :what => "Walking")
+Event.create(:title => "Swimming", :when => "2017-9-19T21:30", :where => "New York", :what => "Swimming")
+
