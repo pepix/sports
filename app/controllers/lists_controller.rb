@@ -4,7 +4,12 @@ class ListsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id]) 
+    @event = Event.find(params[:id])
+    @attendee = Event
+               .where(id: params[:id])
+               .joins("INNER JOIN participants ON participants.event_id = events.id")
+               .joins("INNER JOIN users ON users.id = participants.user_id")
+               .select("users.*")
   end
 
   def new
@@ -19,9 +24,9 @@ class ListsController < ApplicationController
       render :new
     end
   end
-  
+
   private
-  
+
   def event_params
     # ubmitしたデータのうち、指定したデータのみpermitの引数に指定
     params.require(:event).permit(

@@ -3,4 +3,9 @@
 <h1><%= @event.title %></h1>
 <p><%= simple_format @event.where %></p>
 <p><%= simple_format @event.what %></p>
+<% @attendee.each do |a| %>
+<li>
+<p><%= simple_format a.name %></p>
+</li>
+<% end %>
 <%= link_to "Join", "http://google.com" %>
