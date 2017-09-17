@@ -5,7 +5,6 @@ class ListsController < ApplicationController
 
   def show
     @event = Event.find(params[:id]) 
-    @event = Event.new
   end
 
   def new
@@ -13,14 +12,21 @@ class ListsController < ApplicationController
   end
 
   def create
-    # save
     @event = Event.new(event_params)
-    # バリデーション
     if @event.save
-      # redirect
-      redirect_to events_path
+      redirect_to @event, notice: 'Event created.'
     else
-      render 'new'
+      render :new
     end
   end
+  
+  private
+  
+  def event_params
+    # ubmitしたデータのうち、指定したデータのみpermitの引数に指定
+    params.require(:event).permit(
+      :title, :when, :where, :what
+    )
+  end
+
 end
