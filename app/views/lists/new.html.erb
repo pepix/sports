@@ -2,27 +2,46 @@
 <p>Find me in app/views/lists/new.html.erb</p>
 <hr>
 <h1>New event</h1>
+<table>
 <%= form_for @event, :url => {:action => 'create'} do |f| %>
-    <div>Title: <%= f.text_field :title %></div>
+    <tr>
+    <td><div>Title:</div></td>
+    <td><div>
+    <%= f.text_field :title %>
+    </div>
     <% if @event.errors.messages[:title].any? %>
         <span style="color:red">
         <%= @event.errors.messages[:title][0] %>
         </span>
     <% end %>
-    <div>When: <%= f.datetime_select :when %></div>
+    </td>
+    </tr>
+    <tr>
+    <td><div>When:</div></td>
+    <td><div><%= f.datetime_select :when %></div>
     <% if @event.errors.messages[:when].any? %>
         <span style="color:red">
         <%= @event.errors.messages[:when][0] %>
         </span>
     <% end %>
-    <div>Where: <%= f.text_field :where %></div>
-    <div>What: <%= f.text_field :what %></div></br>
+    </td>
+    </tr>
+    <tr>
+    <td><div>Where:</div></td>
+    <td><div><%= f.text_field :where %></div></td>
+    </tr>
+    <tr><td>What:</td>
+    <td><div><%= f.text_field :what %></div>
     <% if @event.errors.messages[:what].any? %>
         <span style="color:red">
         <%= @event.errors.messages[:what][0] %>
         </span>
     <% end %>
-    <br>
-    <%= f.submit %>
+    </td>
+    </tr>
+<tr>
+<td><%= f.submit %></td>
+</tr>
+</table>
 <% end %>
   
