@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'home/index' 
+  get 'home/index'
 
   get 'home/show'
 
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   get 'lists/:id', to: 'lists#show', as: 'event'
 
-  get 'search/:what' => 'search#index' 
-  get 'search/:when' => 'search#index' 
-  get 'search/:where' => 'search#index' 
+  get 'search/:what' => 'search#index'
+  get 'search/:when' => 'search#index'
+  get 'search/:where' => 'search#index'
 end
