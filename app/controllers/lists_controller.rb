@@ -34,11 +34,6 @@ class ListsController < ApplicationController
     end
   end
 
-  def hello_world
-    @greeting = params[:greeting]
-  end
-
-
   private
 
   def event_params
