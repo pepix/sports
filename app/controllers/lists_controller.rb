@@ -5,46 +5,25 @@ class ListsController < ApplicationController
 
   def show
     @event = Event.find(params[:id]) 
-    @event = Event.new
   end
 
   def new
     @event = Event.new
   end
 
-#  def create
-#    # @event = Event.new(event_params)
-#    @event = Event.new([:event])
-#    respond_to do |format|
-#      if @event.save
-#        # format.html { redirect_to @event, notice: 'Event was successfully created.' }
-#        # format.json { render :index, status: :created, location: @event }
-#      else
-#        format.html { render :new }
-#        format.json { render json: @event.errors, status: :unprocessable_entity }
-#      end
-#    end
-#  end
-
   def create
     @event = Event.new(event_params)
-    @event.save
-    #respond_to do |format|
-          #  if @event.save
-              # format.html { redirect_to @event, notice: 'Event was successfully created.' }
-              # format.json { render :index, status: :created, location: @event }
-          #  else
-            #  format.html { render :new }
-            #  format.json { render json: @event.errors, status: :unprocessable_entity }
-            #end
-    #end
+    if @event.save
+      redirect_to @event, notice: 'Event created.'
+    else
+      render :new
+    end
   end
   
   private
   
   def event_params
-    # submitしたデータのうち、Model作成に必要なものを
-    # permitの引数に指定する
+    # ubmitしたデータのうち、指定したデータのみpermitの引数に指定
     params.require(:event).permit(
       :title, :when, :where, :what
     )
