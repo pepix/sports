@@ -40,7 +40,7 @@ Event.create(:title => "Penetration", :when => "2017-9-09T13:30", :where => "Pho
 Event.create(:title => "Throwing", :when => "2017-9-13T19:30", :where => "Brick", :what => "Softball", :image => Rails.root.join("app/assets/images/Softball.jpg").open)
 Event.create(:title => "Daiet", :when => "2017-9-15T05:30", :where => "Concord", :what => "Running", :image => Rails.root.join("app/assets/images/Running.jpg").open)
 Event.create(:title => "Fun to do it", :when => "2017-9-01T07:30", :where => "Daly city", :what => "Badminton", :image => Rails.root.join("app/assets/images/Badminton.jpg").open)
-Event.create(:title => "Go for the goal", :when => "2017-9-09T13:30", :where => "Pacifica", :what => "Badminton", :image => Rails.root.join("app/assets/images/Badminton.jpg").open)
+Event.create(:title => "Go for the goal", :when => "2017-9-09T13:30", :where => "Pacifica", :what => "Badminton", :image => Rails.root.join("app/assets/images/Badminton2.jpg").open)
 Event.create(:title => "Can you parasol ?", :when => "2017-9-06T13:30", :where => "San Mateo", :what => "Ski", :image => Rails.root.join("app/assets/images/Ski.jpg").open)
 
 Organizer.create(:event_id => "1" , :user_id => "1")
