@@ -18,7 +18,10 @@
   <div class="container">
     <% @events.each do |event| %>
     <div class="card" style="width: 20rem; float: left; margin: 30px 8px 20px 8px; border-radius: 2px; padding: 5px";>
-      <img class="card-img-top" src="shell-snail-shell-snail-60711.jpeg" alt="Card image cap">
+      <% if event.image? %>
+        <%= image_tag event.image, :class => "card-img-top" %>
+      <% else %>
+      <% end %>
       <div class="card-block">
         <h4 class="card-title"><%= event.title %><hr></h4>
         <p class="card-text"><%= event.what %></p>
