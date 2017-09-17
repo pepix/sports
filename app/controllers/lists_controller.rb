@@ -10,6 +10,7 @@ class ListsController < ApplicationController
                .joins("INNER JOIN participants ON participants.event_id = events.id")
                .joins("INNER JOIN users ON users.id = participants.user_id")
                .select("users.*")
+    gon.doko = @event.where
   end
 
   def new

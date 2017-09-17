@@ -3,6 +3,7 @@
 <h1><%= @event.title %></h1>
 <p><%= simple_format @event.where %></p>
 <p><%= simple_format @event.what %></p>
+
 <% @attendee.each do |a| %>
 <li>
 <p><%= simple_format a.name %></p>
@@ -11,6 +12,7 @@
 <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.1.0/mapquest.js"></script>
 <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.1.0/mapquest.css"/>
 <script type="text/javascript">
+    var place = gon.doko
   window.onload = function() {
     L.mapquest.key = 'UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU';
 
@@ -20,7 +22,7 @@
       zoom: 14
     });
 
-    L.mapquest.geocoding().geocode("練馬区");
+    L.mapquest.geocoding().geocode(place);
   }
 </script>
 <div id="map" style="width: 100%; height: 530px;"></div>
