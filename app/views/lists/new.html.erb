@@ -1,0 +1,12 @@
+<h1>Lists#new</h1>
+<p>Find me in app/views/lists/new.html.erb</p>
+<hr>
+<h1>New event</h1>
+<%= form_for :list, url: lists_path do |f| %>
+    <div>title: <%= f.text_field :title %></div>
+    <div>when: <%= f.datetime_select :when %></div>
+    <div>where: <%= f.text_field :where %></div>
+    <div>what: <%= f.text_field :what %></div></br>
+    <%= f.submit %>
+<% end %>
+  
