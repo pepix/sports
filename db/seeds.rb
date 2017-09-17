@@ -17,6 +17,7 @@ Event.create(:title => "Let's swim together!", :when => "2017-9-19T21:30", :wher
 
 Organizer.create(:event_id => "1" , :user_id => "1")
 Participant.create(:event_id => "1" , :user_id => "2")
+Participant.create(:event_id => "1" , :user_id => "3")
 
 Organizer.create(:event_id => "2" , :user_id => "3")
 Participant.create(:event_id => "2" , :user_id => "2")
