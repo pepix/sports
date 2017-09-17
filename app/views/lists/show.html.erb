@@ -1,9 +1,17 @@
 <h1>Lists#show</h1>
 <p>Find me in app/views/lists/show.html.erb</p>
-<h1><%= @event.title %></h1>
+<h1><%= @event.title %>
+<%= link_to "Join", "show_detail_path(show_detail)" %></h1>
 <p><%= simple_format @event.what %></p>
 
+
 <table>
+<tr>
+<td>
+<h2>ORGANIZERS</h2>
+<p><%= @organizer.name %></p>
+</td>
+</tr>
 <tr>
 <td>
 <h2>WHEN?</h2>
@@ -46,4 +54,7 @@
 </script>
 <div id="map" style="width: 80%; height: 530px;"></div>
 
+<<<<<<< Updated upstream
 <%= link_to "Join", controller: "detail", action: "join", event_id: @event.id %>
+=======
+>>>>>>> Stashed changes
