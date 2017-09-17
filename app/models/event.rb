@@ -8,4 +8,5 @@ class Event < ApplicationRecord
   validates :when, presence: true
   validates :where, presence: true
 
+  mount_uploader :image, ImageUploader
 end

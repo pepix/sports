@@ -18,33 +18,29 @@
   </form>
   
   <h2><%= link_to 'Add new event', "lists/new" %></h2>
-  
+
   <h3>Popular</h3>
   <div class="container">
-  
-  <section class="content-gallery scroll-bar">
-    <% @events.each do |event| %>
-    <section class="content-gallery-card">
-      <div class="card text-right" style="padding: 10px; margin: 5px;">
-        <div class="card-block">
-          <h4 class="card-title"><%= event.title %></h4>
-          <p class="card-text">W<%= event.what %><br>
-          <%= event.where %><br>
-          <%= event.when %><br>
-          <%= event.name %><br></p>
-          <%= link_to "Go somewhere", event_path(event), :class => "btn btn-primary", :style => "text-decoration: none;" %>
+    <section class="content-gallery scroll-bar">
+      <% @events.each do |event| %>
+      <section class="content-gallery-card">
+        <div class="card text-right" style="padding: 10px; margin: 5px;">
+          <% if event.image? %>
+            <%= image_tag event.image, :class => "card-img-top" %>
+          <% else %>
+          <% end %>
+          <div class="card-block">
+            <h4 class="card-title"><%= event.title %></h4>
+            <p class="card-text">W<%= event.what %><br>
+            <%= event.where %><br>
+            <%= event.when %><br>
+            <%= event.name %><br></p>
+            <%= link_to "Go somewhere", event_path(event), :class => "btn btn-primary", :style => "text-decoration: none;" %>
+          </div>
         </div>
-      </div>
-      </section>
-  <% end %>
-
-   
-
-</section>
-
-    
-
-    
+        </section>
+      <% end %>
+    </section>
   </div>
   </body>
 </html>
