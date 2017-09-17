@@ -1,28 +1,54 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
-<hr>
-<h1>TOP PAGE</h1>
-<%= link_to 'Add new event', "lists/new" %>
-<ul>
-<% @events.each do |event| %>
-<li>
-  <%= link_to event.title, event_path(event) %>
-</li>
-<% end %>
-</ul>
-<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.1.0/mapquest.js"></script>
-<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.1.0/mapquest.css"/>
-<script type="text/javascript">
-  window.onload = function() {
-    L.mapquest.key = 'UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU';
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Sample</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script
+  </head>
 
-    var map = L.mapquest.map('map', {
-      center: [0, 0],
-      layers: L.mapquest.tileLayer('map'),
-      zoom: 14
-    });
+  <body style="overflow: scroll";>
+  <h1>Lists#index</h1>
+  <p>Find me in app/views/lists/index.html.erb</p>
+  <hr>
+  <h1>TOP PAGE</h1>
+  <%= link_to 'Add new event', "lists/new" %>
 
-    L.mapquest.geocoding().geocode('Boston, MA');
-  }
-</script>
-<div id="map" style="width: 100%; height: 530px;"></div>
+  <div class="container">
+    <% @events.each do |event| %>
+    <div class="card" style="width: 20rem; float: left; margin: 30px 8px 20px 8px; border-radius: 2px; padding: 5px";>
+      <img class="card-img-top" src="shell-snail-shell-snail-60711.jpeg" alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title"><%= event.title %><hr></h4>
+        <p class="card-text"><%= event.what %></p>
+        <p class="card-text"><%= event.where %></p>
+        <p class="card-text"><%= event.when %></p>
+        <p class="card-text"><%= event.name %></p>
+        <%= link_to "Go somewhere", event_path(event), :class => "btn btn-primary" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.1.0/mapquest.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.1.0/mapquest.css"/>
+  <script type="text/javascript">
+    window.onload = function() {
+      L.mapquest.key = 'UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU';
+
+      var map = L.mapquest.map('map', {
+        center: [0, 0],
+        layers: L.mapquest.tileLayer('map'),
+        zoom: 14
+      });
+
+      L.mapquest.geocoding().geocode('Boston, MA');
+    }
+  </script>
+  <div id="map" style="width: 100%; height: 530px;"></div>
+  </body>
+</html>

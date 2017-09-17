@@ -1,6 +1,9 @@
 class ListsController < ApplicationController
   def index
-    @events = Event.all.order(created_at: 'desc')
+    @events = Event.joins("INNER JOIN organizers ON organizers.event_id = events.id")
+               .joins("INNER JOIN users ON organizers.user_id = users.id")
+               .select("events.*, users.name")
+               .order(created_at: 'desc')
   end
 
   def show
