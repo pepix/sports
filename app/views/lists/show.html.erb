@@ -1,17 +1,30 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<head>
+  <style>
+    table td {
+      padding: 30px;
+      border: 1px solid rgb(20,24,24);
+    }
+    table td p {
+      font-size: 2.0rem;
+
+    }
+    table td h2 {
+      font-size: 3.8rem;
+    }
+
+  </style>
+</head>
+
 <h1><%= @event.title %>
 <%= link_to "Join", "show_detail_path(show_detail)" %></h1>
-<p><%= simple_format @event.what %></p>
-
+<h2>ORGANIZERS</h2>
+<p><%= @organizer.name %></p>
 <table>
 <tr>
 <td>
-<h2>ORGANIZERS</h2>
-<p><%= @organizer.name %></p>
+<h2>WHAT?</h2>
+<p><%= @event.what %></p>
 </td>
-</tr>
-<tr>
 <td>
 <h2>WHEN?</h2>
 <p><%= @event.when %></p>

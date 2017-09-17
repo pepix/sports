@@ -6,11 +6,7 @@
   </head>
 
   <body>
-  <h1>TOP PAGE</h1>
-  <form action="/search" method="get" class="form-inline">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search" name="title">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Submit">Search</button>
-  </form>
+  <center>
 
   <form action="/search" method="get">
   Search: <input type="text" name="title">
@@ -21,12 +17,12 @@
 
   <h3>Popular</h3>
   <div class="container">
-    <section class="content-gallery scroll-bar">
+    <section class="content-gallery scroll-bar" style="background-color:rgb(172,196,207);">
       <% @events.each do |event| %>
       <section class="content-gallery-card">
         <div class="card text-right" style="padding: 10px; margin: 5px;">
           <% if event.image? %>
-            <%= image_tag event.image, :class => "card-img-top" %>
+            <%= image_tag event.image, :class => "card-img-top", :style => "width:120px; height:120px; margin-right:auto; margin-left:auto;"%>
           <% else %>
           <% end %>
           <div class="card-block">
@@ -42,5 +38,6 @@
       <% end %>
     </section>
   </div>
+  </center>
   </body>
 </html>

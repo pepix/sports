@@ -16,18 +16,18 @@
 
   <body style="background-color:rgb(172,196,207);" >
 
-  <nav>
+  <nav style="font-size: 1.9rem";>
       <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
       <% if user_signed_in? %> 
         <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
         <!-- *_path はUserモデルを作成したときに、
           deviseにより自動で作成されてますので、rake routesで確認できます -->
         Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to "TOP", lists_path %> |
+        <%= link_to "Top", lists_path %> |
         <%= link_to 'Change Profile', edit_user_registration_path %> |
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       <% else %>
-        <%= link_to "TOP", lists_path %> |
+        <%= link_to "Top", lists_path %> |
         <%= link_to "Sign in", new_user_registration_path %> |
         <%= link_to "Log in", new_user_session_path %>
       <% end %>
@@ -38,8 +38,8 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">
-    <img src="/assets/images/favicon.jpg" width="30" height="30" alt="">
+  <a class="navbar-brand" href="index">
+    <img src="/assets/images/icon.jpg" width="30" height="30" alt="">
   </a>
   <a class="navbar-brand" href="#">Sport2Me</a>
 
