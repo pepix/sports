@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def index
     @events = Event.joins("INNER JOIN organizers ON organizers.event_id = events.id")
                .joins("INNER JOIN users ON organizers.user_id = users.id")
-               .select("events.*, users.*")
+               .select("events.*, users.name")
                .order(created_at: 'desc')
   end
 
