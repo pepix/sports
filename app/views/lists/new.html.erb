@@ -16,16 +16,6 @@
         </span>
     <% end %>
     <div>where: <%= f.text_field :where %></div>
-
-    <h2>Greeting</h2>
-    <%= form_tag("/lists", method: "hello_world") do %>
-        <%= label_tag(:greeting, "Greeting:") %>
-        <%= text_field_tag(:greeting) %>
-        <%= submit_tag("Greeting") %>
-      <% end %>
-    <%= @greeting %>
-      
-
     <div>what: <%= f.text_field :what %></div></br>
     <% if @event.errors.messages[:what].any? %>
         <span style="color:red">

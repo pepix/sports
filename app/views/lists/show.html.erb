@@ -1,16 +1,29 @@
 <h1>Lists#show</h1>
 <p>Find me in app/views/lists/show.html.erb</p>
 <h1><%= @event.title %></h1>
-<p><%= simple_format @event.where %></p>
 <p><%= simple_format @event.what %></p>
 
+
+
+<table>
+<tr>
+<td>
+<h2>WHEN?</h2>
+<p><%= @event.when %></p>
+</td>
+<td>
+<h2>WHERE?</h2>
+<p><%= simple_format @event.where %></p>
+</td>
+</tr>
+</table>
+<h2>ALL MEMBERS</h2>
 <% @attendee.each do |a| %>
 <li>
 <p><%= simple_format a.name %></p>
 </li>
 <% end %>
 
-<h2>WHERE?</h2>
 <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.1.0/mapquest.js"></script>
 <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.1.0/mapquest.css"/>
 <script type="text/javascript">
