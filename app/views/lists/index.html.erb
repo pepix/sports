@@ -16,6 +16,11 @@
   <p>Find me in app/views/lists/index.html.erb</p>
   <hr>
   <h1>TOP PAGE</h1>
+  <form action="/search" method="get">
+  Search: <input type="text" name="title"><br>
+  <input type="submit" value="Submit">
+  </form>
+
   <%= link_to 'Add new event', "lists/new" %>
 
   <div class="container">
