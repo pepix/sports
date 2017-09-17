@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get 'lists/:id', to: 'lists#show', as: 'event'
 
+  get 'search' => 'search#index'
+  get 'search/:title' => 'search#index'
   get 'search/:what' => 'search#index'
   get 'search/:when' => 'search#index'
   get 'search/:where' => 'search#index'
