@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  get 'lists/index'
 
-  get 'lists/show'
-
-  get 'lists/new'
-
-  get 'lists/create' 
+  resources "lists"
 
   devise_for :users
+
   get 'home/index' 
 
   get 'home/show'
@@ -19,7 +15,7 @@ Rails.application.routes.draw do
 
   get 'home#index' => 'home#index'
 
-  get 'lists/' => 'lists#index'
+  get 'lists/' => 'lists#create'
 
   get '/lists/:id', to: 'lists#show', as: 'event'
 end

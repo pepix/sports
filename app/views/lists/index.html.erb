@@ -2,7 +2,7 @@
 <p>Find me in app/views/lists/index.html.erb</p>
 <hr>
 <h1>TOP PAGE</h1>
-<%= link_to 'Add new event', "new" %>
+<%= link_to 'Add new event', "lists/new" %>
 <ul>
 <% @events.each do |event| %>
 <li>
@@ -10,3 +10,19 @@
 </li>
 <% end %>
 </ul>
+<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.1.0/mapquest.js"></script>
+<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.1.0/mapquest.css"/>
+<script type="text/javascript">
+  window.onload = function() {
+    L.mapquest.key = 'UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU';
+
+    var map = L.mapquest.map('map', {
+      center: [0, 0],
+      layers: L.mapquest.tileLayer('map'),
+      zoom: 14
+    });
+
+    L.mapquest.geocoding().geocode('Boston, MA');
+  }
+</script>
+<div id="map" style="width: 100%; height: 530px;"></div>
