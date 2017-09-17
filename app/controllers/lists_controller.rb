@@ -13,6 +13,11 @@ class ListsController < ApplicationController
                .joins("INNER JOIN participants ON participants.event_id = events.id")
                .joins("INNER JOIN users ON users.id = participants.user_id")
                .select("users.*")
+    @organizer = Event
+               .where(id: params[:id])
+               .joins("INNER JOIN organizers ON organizers.event_id = events.id")
+               .joins("INNER JOIN users ON users.id = organizers.user_id")
+               .select("users.*")
     gon.place = @event.where
   end
 
