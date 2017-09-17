@@ -2,41 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap Sample</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script
   </head>
 
-  <body style="overflow: scroll";>
-  <h1>Lists#index</h1>
-  <p>Find me in app/views/lists/index.html.erb</p>
-  <hr>
+  <body>
   <h1>TOP PAGE</h1>
   <form action="/search" method="get">
-  Search: <input type="text" name="title"><br>
+  Search: <input type="text" name="title">
   <input type="submit" value="Submit">
   </form>
-
-  <%= link_to 'Add new event', "lists/new" %>
-
+  <h2><%= link_to 'Add new event', "lists/new" %></h2>
+  
+  <h3>Popular</h3>
   <div class="container">
+  
+  <section class="content-gallery scroll-bar">
     <% @events.each do |event| %>
-    <div class="card" style="width: 20rem; float: left; margin: 30px 8px 20px 8px; border-radius: 2px; padding: 5px";>
-      <img class="card-img-top" src="shell-snail-shell-snail-60711.jpeg" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title"><%= event.title %><hr></h4>
-        <p class="card-text"><%= event.what %></p>
-        <p class="card-text"><%= event.where %></p>
-        <p class="card-text"><%= event.when %></p>
-        <p class="card-text"><%= event.name %></p>
-        <%= link_to "Go somewhere", event_path(event), :class => "btn btn-primary" %>
+    <section class="content-gallery-card">
+      <div class="card text-right" style="padding: 10px; margin: 5px;">
+        <div class="card-block">
+          <h4 class="card-title"><%= event.title %></h4>
+          <p class="card-text">W<%= event.what %><br>
+          <%= event.where %><br>
+          <%= event.when %><br>
+          <%= event.name %><br></p>
+          <%= link_to "Go somewhere", event_path(event), :class => "btn btn-primary", :style => "text-decoration: none;" %>
+        </div>
       </div>
-    </div>
-    <% end %>
+      </section>
+  <% end %>
+
+   
+
+</section>
+
+    
+
+    
   </div>
   </body>
 </html>
